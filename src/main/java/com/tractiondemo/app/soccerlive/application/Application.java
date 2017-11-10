@@ -1,24 +1,23 @@
 package com.tractiondemo.app.soccerlive.application;
 
-import java.util.ArrayList;
-import java.util.List;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.tractiondemo.app.soccerlive.model.Fixtures;
 import com.tractiondemo.app.soccerlive.model.Team;
 
+@Service
 public class Application {
 	
 	public static final String SOCCER_LEAGUE_SERVICE_URI = "http://api.football-data.org/v1/competitions/438/leagueTable";
 	public static final String TEAM_SERVICE_URI = "http://api.football-data.org/v1/teams/";
 
 	
-	@SuppressWarnings("unchecked")
-	public List<Team> getLeagueTable(){
-		List<Team> teams= new ArrayList<>();
+	public String getLeagueTable(){
 		RestTemplate restTemplate = new RestTemplate();
-		teams = restTemplate.getForObject(SOCCER_LEAGUE_SERVICE_URI, List.class);
+		String teams = restTemplate.getForObject(SOCCER_LEAGUE_SERVICE_URI, String.class);
+		System.out.println(teams);
 		return teams;
 		
 	}

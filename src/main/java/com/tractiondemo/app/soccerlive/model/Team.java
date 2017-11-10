@@ -16,6 +16,7 @@ public class Team {
 	private int goalsAgainst;
 	private int goalDiff;
 	private int points;
+	private String crestUrl;
 	/**
 	 * @return the teamName
 	 */
@@ -159,5 +160,17 @@ public class Team {
 	 */
 	public void setMarketValue(Double marketValue) {
 		this.marketValue = marketValue;
+	}
+	/**
+	 * @return the crestUrl
+	 */
+	public String getCrestUrl() {
+		return crestUrl;
+	}
+	/**
+	 * @param crestUrl the crestUrl to set
+	 */
+	public void setCrestUrl(String crestUrl) {
+		this.crestUrl = crestUrl;
 	}
 }
